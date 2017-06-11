@@ -29,11 +29,17 @@
         </div>
         <div class="container">
             <div id="rightSide">
-                <div id="latestSpot"></div>
+                <!-- <div id="latestSpot"></div> -->
                 <div id="selectedSpot"></div>
             </div>
             <div id="map"></div>
         </div>
+        <!-- <div id="info" class="container">
+            <h3>Contribute!</h3>
+            <div id="theNumberofSpots"></div>
+            <p>This website is hooked up to <a href="https://docs.google.com/spreadsheets/d/1hnfQcggYcBYimuO_UOMvwoOi_I9vUvFpkMt4wjrrpLE/edit?usp=sharing" target="_blank">this Google Spreadsheet</a>, which I've shared, so click and add your favorite hack spots to the bottom of the list! For the map you'll need to <strong>get the lat and long</strong> of the spot, you can get that <a href="http://www.latlong.net/" target="_blank">here</a>. The locating of these places is helpful, so please try to fill out all the columns.</p>
+
+        </div> -->
         <div class="container">
             <input id="tableFilter" type="text" placeholder="filter by.."></input>
             <span class="clear button">Clear</span> <span class="resetMap button">Reset Map</span>
@@ -59,21 +65,21 @@
         <table>
             <tr><th class="tHeader">Name</th><th class="tHeader">Address</th><th class="tHeader">City</th><th class="tHeader">State</th><th class="tHeader">Country</th><th class="">Elsewhere</th></tr>
             {{#rows}}
-                <tr id="{{rowNumber}}" class="spotRow"><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{country}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
+                <tr id="{{rowNumber}}" class="spotRow"><td>{{apn}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{country}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a> <a class="button" href="http://www.yelp.com/search?find_desc={{apn}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
             {{/rows}}
         </table>
     </script>
 
-    <script id="latestSpot" type="text/html">
+    <!-- <script id="latestSpot" type="text/html">
         {{#rows}}
             <h4 class="fauxButton">MOST RECENT SPOT</h4>
-            <h2>{{name}}</h2>
+            <h2>{{apn}}</h2>
             <p class="colorText">{{address}}<p>
             <p class="colorText">{{city}}{{#state}}, {{state}}{{/state}}{{#postcode}}, {{postcode}}{{/postcode}}</p>
             <ul>
-                <li><span class="category">Wifi:</span> {{wifipassword}}</li>
-                <li><span class="category">Outlets:</span> {{outlets}}</li>
-                <li><span class="category">Couch:</span> {{couch}}</li>
+                <li><span class="category">Wifi:</span> {{snum}}</li>
+                <li><span class="category">Outlets:</span> {{sdir}}</li>
+                <li><span class="category">Couch:</span> {{styp}}</li>
                 <li><span class="category">Large Table:</span> {{largetable}}</li>
                 <li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
                 <li><span class="category">Brewing:</span> {{brewing}}</li>
@@ -81,10 +87,10 @@
             </ul>
             <ul>
                 <li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
-                <li><a href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
+                <li><a href="http://www.yelp.com/search?find_desc={{apn}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
             </ul>
         {{/rows}}
-    </script>
+    </script> -->
 
     <script id="theNumberofSpots" type="text/html">
         <p><strong><span class="red-text">{{numberOfSpots}}</span> hack spots strong!</p>
@@ -93,20 +99,20 @@
     <script id="selectedSpot" type="text/html">
         {{#rows}}
             <h4 class="fauxButton">SELECTED SPOT</h4>
-            <h2>{{name}}</h2>
+            <h2>{{apn}}</h2>
             <p class="colorText">{{address}}<p>
             <p class="colorText">{{city}}{{#state}}, {{state}}{{/state}}{{#postcode}}, {{postcode}}{{/postcode}}</p>
             <ul>
-                <li><span class="category">Wifi:</span> {{wifipassword}}</li>
-                <li><span class="category">Outlets:</span> {{outlets}}</li>
-                <li><span class="category">Couch:</span> {{couch}}</li>
+                <li><span class="category">SNUM:</span> {{snum}}</li>
+                <li><span class="category">SDIR:</span> {{sdir}}</li>
+                <li><span class="category">STYP:</span> {{styp}}</li>
                 <li><span class="category">Large Table:</span> {{largetable}}</li>
                 <li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
                 <li><span class="category">Brewing:</span> {{brewing}}</li>
             </ul>
             <ul>
                 <li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
-                <li><a href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
+                <li><a href="http://www.yelp.com/search?find_desc={{apn}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
             </ul>
         {{/rows}}
     </script>
