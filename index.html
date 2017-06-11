@@ -60,7 +60,7 @@
         <table>
             <tr><th class="tHeader">Address</th><th class="tHeader">City</th><th class="tHeader">Snum</th><th class="tHeader">SNam</th><th class="tHeader">STYP</th><th class="">Zoning</th></tr>
             {{#rows}}
-                <tr id="{{rowNumber}}" class="spotRow"><td>{{address}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{country}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
+                <tr id="{{rowNumber}}" class="spotRow"><td>{{addredd}}</td><td>{{city}}</td><td>{{snum}}</td><td>{{snam}}</td><td>{{styp}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a></td></tr>
             {{/rows}}
         </table>
     </script>
@@ -70,12 +70,11 @@
           <h4 class="fauxButton">SELECTED SPOT</h4>
           <h2>{{name}}</h2>
           <p class="colorText">{{address}}<p>
-          <p class="colorText">{{city}}{{#state}}, {{state}}{{/state}}{{#postcode}}, {{postcode}}{{/postcode}}</p>
+          <p class="colorText">{{zoning}}</p>
           <ul>
               <li><span class="category">SNUM:</span> {{snum}}</li>
               <li><span class="category">SNAM:</span> {{snam}}</li>
               <li><span class="category">Council ID:</span> {{coun}}</li>
-              <li><span class="category">Zoning:</span> {{zoning}}</li>
           </ul>
       {{/rows}}
     </script>
